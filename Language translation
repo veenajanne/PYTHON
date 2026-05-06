@@ -1,0 +1,7 @@
+!pip install googletrans==4.0.0-rc1
+from googletrans import Translator
+t=Translator()
+a=input("enter any word: ")
+b=input("enter target lag:")
+res=t.translate(a,dest=b)
+print(res.text)
