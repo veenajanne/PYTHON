@@ -1,0 +1,11 @@
+import numpy as np
+import matplotlib.pyplot as plt
+overs=np.arange(1,11)
+scores=[2,4,5,7,7,3,2,4,4,5]
+plt.bar(overs,scores,color="blue")
+plt.title("cricket score")
+plt.xlabel("overs from 1 to 10")
+plt.ylabel("runs by overs")
+plt.xticks(overs)
+plt.grid(axis="y",linestyle="--")
+plt.show()
