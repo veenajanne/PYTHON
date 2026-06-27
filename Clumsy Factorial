@@ -1,0 +1,22 @@
+class Solution:
+    def clumsy(self, n: int) -> int:
+        nums = []
+        op = 0  
+
+        nums.append(n)
+        n -= 1
+
+        while n > 0:
+            if op == 0:
+                nums[-1] = nums[-1] * n
+            elif op == 1:
+                nums[-1] = int(nums[-1] / n)  
+            elif op == 2:
+                nums.append(n)
+            else:
+                nums.append(-n)
+
+            n -= 1
+            op = (op + 1) % 4
+
+        return sum(nums)
