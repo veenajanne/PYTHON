@@ -1,0 +1,20 @@
+class Solution:
+    def checkPowersOfThree(self, n: int) -> bool:
+        power = 1
+        while power * 3 <= n:
+            power *= 3
+
+        def solve(remaining, power):
+
+            if remaining == 0:
+                return True
+
+            if power == 0:
+                return False
+            if remaining >= power:
+                if solve(remaining - power, power // 3):
+                    return True
+            return solve(remaining, power // 3)
+
+        return solve(n, power)
+        
